@@ -1,0 +1,12 @@
+{
+  "id": "timers",
+  "title": "Timers",
+  "letters": "SMERIT",
+  "timeLimitSeconds": 180,
+  "words": ["TIMERS", "MERIT", "TIMES", "TRIES", "STEM", "TRIM", "EMIT"],
+  "extras": [
+    "MITERS", "REMITS", "MERITS", "TIMER", "MITER", "REMIT", "ITEMS", "EMITS", "MITES",
+    "SMITE", "TIRES", "RITES", "TIERS", "TERM", "TIME", "ITEM", "MITE", "TIER", "TIRE",
+    "RISE", "SIRE", "REST", "MIST", "STIR", "SIT", "SET", "MET", "RIM", "ITS", "TIE"
+  ]
+}

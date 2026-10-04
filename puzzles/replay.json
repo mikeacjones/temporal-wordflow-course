@@ -1,0 +1,13 @@
+{
+  "id": "replay",
+  "title": "Replay",
+  "letters": "YALPER",
+  "timeLimitSeconds": 180,
+  "words": ["REPLAY", "PLAYER", "EARLY", "PEARL", "PLAY", "PRAY", "YEAR"],
+  "extras": [
+    "PARLEY", "PEARLY", "LAYER", "RELAY", "PALER", "PREY", "PLEA", "PEAR", "REAP", "PALE",
+    "LEAP", "PEAL", "REAL", "EARL", "RELY", "LYRE", "APE", "ARE", "EAR", "ERA", "LAP",
+    "LAY", "PAL", "PAY", "PEA", "PER", "RAP", "RAY", "RYE", "YAP", "YEA", "PLY", "PRY",
+    "LYE", "AYE"
+  ]
+}

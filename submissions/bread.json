@@ -1,0 +1,8 @@
+{
+  "id": "bread",
+  "title": "Bread",
+  "letters": "DAERB",
+  "timeLimitSeconds": 150,
+  "words": ["BREAD", "BEARD", "BEAR", "BARE", "BRED", "DARE", "DEAR", "READ"],
+  "extras": []
+}

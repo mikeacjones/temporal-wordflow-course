@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temporal Wordflow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Temporal Wordflow</h1>
+    <a id="temporal-ui" target="_blank" rel="noopener">Open Temporal UI ↗</a>
+  </header>
+
+  <main>
+    <section id="player-panel" class="panel">
+      <h2>Player</h2>
+      <div class="lesson-note" hidden></div>
+      <form id="join-form" hidden>
+        <input id="join-name" placeholder="name (a-z, 0-9, _)" autocomplete="off" required>
+        <button type="submit">Join</button>
+        <span class="muted">or play as a guest</span>
+      </form>
+      <div id="player-info" hidden>
+        <strong id="player-name"></strong>
+        <span id="player-stats" class="muted"></span>
+        <a id="player-link" target="_blank" rel="noopener">Workflow ↗</a>
+        <button id="leave" class="link">Switch player</button>
+      </div>
+      <div class="error" hidden></div>
+    </section>
+
+    <section id="puzzle-panel" class="panel">
+      <h2>Puzzles</h2>
+      <div id="puzzles"></div>
+      <div class="lesson-note" hidden></div>
+      <div class="error" hidden></div>
+    </section>
+
+    <section id="game-panel" class="panel" hidden>
+      <div class="game-header">
+        <h2 id="game-title"></h2>
+        <span id="game-status" class="badge"></span>
+        <span id="game-timer" class="timer"></span>
+        <a id="game-link" target="_blank" rel="noopener">Workflow ↗</a>
+      </div>
+      <div id="words"></div>
+      <div id="letters"></div>
+      <form id="guess-form">
+        <input id="guess" placeholder="type a word" autocomplete="off">
+        <button type="submit">Guess</button>
+        <button type="button" id="shuffle" class="secondary">Shuffle</button>
+        <button type="button" id="hint" class="secondary">Hint</button>
+        <button type="button" id="extend" class="secondary">+30s</button>
+      </form>
+      <div id="message"></div>
+      <div class="lesson-note" hidden></div>
+      <div class="error" hidden></div>
+      <div class="lists">
+        <div><h3>Not in puzzle</h3><div id="rejected" class="chips"></div></div>
+        <div><h3>Bonus words</h3><div id="bonus" class="chips"></div></div>
+      </div>
+      <p id="game-summary" class="muted"></p>
+    </section>
+
+    <section id="leaderboard-panel" class="panel">
+      <h2>Leaderboard</h2>
+      <ol id="leaderboard"></ol>
+      <div class="lesson-note" hidden></div>
+      <div class="error" hidden></div>
+    </section>
+
+    <section id="services-panel" class="panel">
+      <h2>External services</h2>
+      <label>Dictionary mode
+        <select id="dictionary-mode"></select>
+      </label>
+      <h3>Activity feed</h3>
+      <ul id="feed" class="muted"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "id": "worker",
+  "title": "Worker",
+  "letters": "KROWER",
+  "timeLimitSeconds": 120,
+  "words": ["WORKER", "REWORK", "ROWER", "WORK", "WOKE", "WORE"],
+  "extras": ["ORE", "ROE", "OWE", "ROW", "WOK", "ERR", "WOE"]
+}

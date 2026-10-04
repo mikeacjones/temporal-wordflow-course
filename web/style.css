@@ -1,0 +1,112 @@
+:root {
+  --bg: #0f1222;
+  --panel: #181c33;
+  --line: #2b3157;
+  --text: #e8eaf6;
+  --muted: #9aa0c3;
+  --accent: #7c8cff;
+  --good: #3ecf8e;
+  --warn: #f5b546;
+  --bad: #ff6b81;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font: 15px/1.5 system-ui, -apple-system, Segoe UI, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+h1 { font-size: 20px; margin: 0; }
+h2 { font-size: 16px; margin: 0 0 12px; }
+h3 { font-size: 13px; margin: 12px 0 6px; color: var(--muted); font-weight: 600; }
+a { color: var(--accent); }
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  padding: 16px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+#game-panel { grid-column: 1 / -1; }
+
+input, select, button {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+button { background: var(--accent); border-color: var(--accent); color: #0b0d1a; font-weight: 600; cursor: pointer; }
+button.secondary { background: transparent; color: var(--text); border-color: var(--line); }
+button.link { background: none; border: none; color: var(--accent); padding: 0; font-weight: 400; }
+button:disabled { opacity: 0.4; cursor: default; }
+
+form { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+.muted { color: var(--muted); }
+.error { color: var(--bad); margin-top: 8px; }
+.lesson-note { color: var(--warn); margin-top: 8px; font-size: 14px; }
+
+#puzzles { display: grid; gap: 8px; }
+.puzzle { display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; }
+
+.game-header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.game-header h2 { margin: 0; }
+.badge { font-size: 12px; padding: 2px 8px; border-radius: 99px; background: var(--line); }
+.badge.won { background: var(--good); color: #0b0d1a; }
+.badge.timed_out { background: var(--bad); color: #0b0d1a; }
+.timer { font-variant-numeric: tabular-nums; font-weight: 600; }
+.timer.low { color: var(--bad); }
+
+#words { display: grid; gap: 6px; margin-bottom: 16px; }
+.word { display: flex; gap: 4px; }
+.cell {
+  width: 30px; height: 30px;
+  display: grid; place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-weight: 700;
+}
+.word.found .cell { background: var(--good); color: #0b0d1a; border-color: var(--good); }
+
+#letters { display: flex; gap: 6px; margin-bottom: 12px; }
+.letter {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  padding: 0;
+}
+
+#message { min-height: 24px; margin-top: 10px; font-weight: 600; }
+#message.good { color: var(--good); }
+#message.bad { color: var(--bad); }
+
+.lists { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip { font-size: 12px; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--line); }
+
+#leaderboard { padding-left: 20px; margin: 0; }
+#feed { padding-left: 18px; margin: 0; font-size: 13px; }

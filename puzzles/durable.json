@@ -1,0 +1,13 @@
+{
+  "id": "durable",
+  "title": "Durable",
+  "letters": "RBDEULA",
+  "timeLimitSeconds": 180,
+  "words": ["DURABLE", "BLADE", "BREAD", "LURED", "RULE", "DEAL"],
+  "extras": [
+    "BEARD", "BLARE", "ABLE", "BLUE", "LEAD", "BARE", "BEAR", "DUAL", "LURE", "RUDE",
+    "DARE", "READ", "BLUR", "BLED", "BRED", "DEAR", "EARL", "REAL", "BALD", "BARD",
+    "LARD", "ALE", "ARE", "BAD", "BED", "BUD", "DUB", "DUE", "EAR", "ERA", "LAD",
+    "LED", "RED", "RUB", "RUE"
+  ]
+}

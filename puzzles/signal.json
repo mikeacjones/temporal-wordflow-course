@@ -1,0 +1,12 @@
+{
+  "id": "signal",
+  "title": "Signal",
+  "letters": "LANGIS",
+  "timeLimitSeconds": 150,
+  "words": ["SIGNAL", "ALIGN", "SNAIL", "SLANG", "SIGN", "NAIL"],
+  "extras": [
+    "SLAIN", "NAILS", "GAINS", "SLING", "SING", "SAIL", "SLAG", "SNAG", "SANG", "LAGS",
+    "GAIN", "LAIN", "AILS", "GALS", "NAGS", "SIN", "NAG", "GAS", "SAG", "LAG", "GAL",
+    "AIL"
+  ]
+}
