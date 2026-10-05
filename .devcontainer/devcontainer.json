@@ -1,0 +1,21 @@
+{
+  "name": "Temporal Wordflow (Go)",
+  "image": "mcr.microsoft.com/devcontainers/go:1",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postStartCommand": "bash .devcontainer/start-course.sh",
+  "forwardPorts": [8080, 8233, 7233],
+  "portsAttributes": {
+    "8000": { "label": "Course", "onAutoForward": "openPreview" },
+    "8080": { "label": "Wordflow web app", "onAutoForward": "openBrowser" },
+    "8233": { "label": "Temporal UI", "onAutoForward": "notify" },
+    "7233": { "label": "Temporal gRPC", "onAutoForward": "silent" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.go"],
+      "settings": {
+        "markdown.preview.breaks": false
+      }
+    }
+  }
+}
