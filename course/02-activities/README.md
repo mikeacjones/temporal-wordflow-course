@@ -37,6 +37,9 @@ Follow [`build.md`](build.md).
 - [ ] The history has `ActivityTaskScheduled`, `ActivityTaskStarted`, and `ActivityTaskCompleted` for `LoadPuzzle`. The puzzle is in the completed event's result.
 - [ ] Restart the Worker with `PUZZLES_FAIL_FIRST=2 make worker`. The puzzle store now fails its first two reads. Start a game. It takes about 3 seconds: a 1 s wait, then a 2 s wait, then success.
 - [ ] Open that Workflow. `ActivityTaskStarted` shows `attempt: 3`, and there is still only one of each Activity event. Click the Activity to see the last failure.
+
+  ![LoadPuzzle succeeded on attempt 3](img/activity-retried.png)
+
 - [ ] Start a Workflow for a puzzle that doesn't exist (the API checks for this, so use the CLI):
 
   ```sh
@@ -45,5 +48,7 @@ Follow [`build.md`](build.md).
   ```
 
   It fails at once with `no puzzle named nope`, after one attempt.
+
+  ![The Workflow failed with a non-retryable error](img/non-retryable.png)
 
 Restart the Worker with plain `make worker` when you're done.

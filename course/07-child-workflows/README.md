@@ -32,7 +32,20 @@ Follow [`build.md`](build.md).
 Run `make clean-workflows`, then restart the Worker and the server. Join again, because the old player Workflows are gone.
 
 - [ ] Join as `alice` and start a game. In the Temporal UI, `player-alice` shows `StartChildWorkflowExecutionInitiated` and `ChildWorkflowExecutionStarted`. The game's ID is `game-alice-1`, and its page links to its parent.
+
+  ![The player started a Child Workflow](img/child-started.png)
+
+  The **Relationships** tab shows the parent and its child.
+
+  ![The Relationships tab](img/relationships.png)
+
 - [ ] Click another puzzle while playing. You get **finish your current game first**, and nothing is added to her history.
+
+  ![One game at a time](img/one-game-at-a-time.png)
+
 - [ ] Finish the game, or let it time out. The player panel updates: games played, and points increased by the score. `player-alice` shows `ChildWorkflowExecutionCompleted` with the result.
+
+  ![The player panel after a win](img/player-after-game.png)
+
 - [ ] Start another game, then terminate `player-alice` from the Temporal UI. Her game is terminated too: that's the parent close policy.
 - [ ] Click **Switch player** and start a game without joining. Guest games still work.

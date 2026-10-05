@@ -35,6 +35,13 @@ Run `make clean-workflows`, restart the Worker and the server, and join again.
 
 - [ ] Click **Hint** twice. Each reveals a letter and costs nothing.
 - [ ] Click **Hint** again. It reveals a letter and the player panel drops by 10 points. The game's history has a `SpendPoints` Activity. `player-alice` has a `spendPoints` Update with an ID ending in `-hint-<hint Update ID>`.
+
+  ![A paid hint](img/paid-hint.png)
+
+  ![The SpendPoints Activity in the game's history](img/spend-points-activity.png)
+
+  ![The spendPoints Update in the player's history](img/spend-points-update.png)
+
 - [ ] Keep buying hints until you have fewer than 10 points. You get **not enough points**. The `SpendPoints` Activity failed after one attempt, and no letter was revealed.
 - [ ] As a guest, the third hint says **guests only get 2 free hints**, and no Activity runs.
 

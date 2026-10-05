@@ -62,7 +62,13 @@ Run `make clean-workflows` and restart the Worker. Pick a mode in the **External
 | `unauthorized` | `401` | **Not in puzzle** right away. One request, no retries. |
 
 - [ ] Each row behaves as described.
+
+  ![A bonus word](img/bonus.png)
+
 - [ ] While a lookup is retrying, the Temporal UI shows the pending Activity's attempt number and last failure.
+
+  ![A pending Activity that's retrying](img/retrying.png)
+
 - [ ] In every mode the game keeps working. The Worker logs a warning when a lookup gives up.
 
 Set the mode back to `ok` when you're done.

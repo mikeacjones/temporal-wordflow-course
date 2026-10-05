@@ -35,7 +35,13 @@ Follow [`build.md`](build.md).
 
 Run `make clean-workflows`, restart the Worker and the server, and join as `alice`.
 
-- [ ] Play about five short games. Using two free hints and then letting the clock run out is quick. Watch `player-alice` in the Temporal UI: when her history passes 100 events, the run ends as **ContinuedAsNew**.
+- [ ] Play about five short games. Using two free hints and then letting the clock run out is quick. Watch `player-alice` in the Temporal UI: when her history passes 100 events, the run ends as **Continued as New**.
+
+  ![Runs of a player Workflow, continued as new](img/runs.png)
+
 - [ ] The Workflow page now shows the new run. Its input contains her full state: points, games played, and so on.
+
+  ![The new run's input](img/new-run-input.png)
+
 - [ ] The player panel shows the same numbers as before, and new games and hints still work. The API didn't change.
 - [ ] To see it sooner, lower the limit to 40 and restart the Worker.

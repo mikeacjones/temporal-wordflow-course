@@ -32,9 +32,15 @@ Follow [`build.md`](build.md).
 Run `make worker` and `make server`.
 
 - [ ] Click a puzzle. The board appears: letters, and blank slots for each word.
+
+  ![The game board](img/board.png)
+
 - [ ] Try a guess. You see **This arrives in Lesson 3**.
 - [ ] Click **Workflow ↗**. The Temporal UI shows a `GameWorkflow` with status **Completed**.
 - [ ] Its Event History has five events: `WorkflowExecutionStarted`, then a Workflow Task (scheduled, started, completed), then `WorkflowExecutionCompleted`.
+
+  ![A completed GameWorkflow and its five events](img/history.png)
+
 - [ ] The **Input** contains the whole puzzle, answers included. Anyone who can read the history can see them. Lesson 2 fixes that.
 - [ ] Stop the Worker and click a puzzle. After 15 seconds the app shows a timeout. In the Temporal UI the new Workflow is **Running** and waiting for a Worker. Start the Worker again and it completes right away.
 

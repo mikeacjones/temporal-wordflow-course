@@ -38,8 +38,17 @@ Run `make clean-workflows`, then restart the Worker and the server.
 
 - [ ] Click a puzzle. The board appears right away, with no loading state.
 - [ ] In the Temporal UI, the history starts with `WorkflowExecutionStarted`, then the `ready` Update's accepted and completed events, with the `LoadPuzzle` Activity between them.
+
+  ![The ready Update with LoadPuzzle between its events](img/updates-history.png)
+
 - [ ] Guess a word. The app tells you what happened: found, not in puzzle, or already found.
+
+  ![A found word](img/guess-found.png)
+
 - [ ] Guess `zz`. You see **words need at least 3 letters** right away, and no new events appear in the history.
+
+  ![A rejected guess](img/guess-rejected.png)
+
 - [ ] Send the same guess twice with the same key. Copy the game ID from the Temporal UI:
 
   ```sh

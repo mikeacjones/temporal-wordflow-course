@@ -27,6 +27,12 @@ Follow [`build.md`](build.md).
 ## Check it
 
 - [ ] Create the Schedule with a 10-second interval. Every 10 seconds the feed shows **Puzzle of the day: ...**.
+
+  ![Puzzle of the day announcements in the feed](img/feed.png)
+
 - [ ] The Temporal UI's **Schedules** page lists `daily-puzzle` with its recent runs. Pause it there, and the announcements stop. Unpause it, and they resume.
+
+  ![The daily-puzzle Schedule](img/schedule.png)
+
 - [ ] Delete the Schedule.
 - [ ] Start a single run with a 30-second delay. It appears in the Workflow list right away, but nothing happens until 30 seconds later, when the announcement appears.

@@ -35,6 +35,9 @@ Follow [`build.md`](build.md).
 - [ ] Play one game to the end and start another. Save their histories, and the player's, with `make history ID=...`. `make replay` prints `ok` for each.
 - [ ] Add a call to `announce` right after the game state is created. `make replay` prints `FAIL` for every game, with a `TMPRL1100` error. The new code schedules an Activity where the history has a Timer.
 - [ ] Start a game on the old code, then restart the Worker with the new code and make a guess. The guess times out. In the Temporal UI, the game shows a failed Workflow Task with the nondeterminism error, retrying.
+
+  ![A game stuck on a nondeterminism error](img/stuck-game.png)
+
 - [ ] Remove the call and restart the Worker. The stuck game picks up where it left off.
 
 Lesson 13 ships the same change safely.

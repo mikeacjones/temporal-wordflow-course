@@ -33,5 +33,8 @@ Join as `alice` and `bob` first.
 
 - [ ] Gift 5 points from `alice` to `bob`. It succeeds, and the player panels show 15 and 25.
 - [ ] Gift 5 from `alice` to `nobody`. It fails with **no player named nobody**, and Alice still has 15. The transfer's history shows `Withdraw` completed, `Deposit` failed, and then a second `Deposit`, the refund, completed.
+
+  ![Withdraw, a failed Deposit, then the refund](img/compensation.png)
+
 - [ ] Gift 100 from `alice`. It fails with **not enough points**. Nothing was withdrawn, so there's nothing to compensate.
 - [ ] Gift 3 from `alice` to `bob` again. It succeeds: a new run with new Update IDs.

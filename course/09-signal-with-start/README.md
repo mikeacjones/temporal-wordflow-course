@@ -35,6 +35,13 @@ Follow [`build.md`](build.md).
 **Don't** clean up first this time. Keep Lesson 8's `player-alice`, with at least one finished game, and restart the Worker and the server.
 
 - [ ] Within a few seconds (the app queries the player, which makes the Worker load her history), the Worker logs an error with code `TMPRL1100`, a nondeterminism error. `player-alice` shows a failing Workflow Task in the Temporal UI. Her history says "game finished, then wait". The new code says "game finished, then run `PublishScore`". When the code and the history disagree, Temporal stops the Workflow instead of guessing. Lesson 12 is about this. For now, run `make clean-workflows`.
+
+  ![A failed Workflow Task with a nondeterminism error](img/nondeterminism.png)
+
 - [ ] Before any game finishes, the leaderboard is empty and there's no `leaderboard` Workflow.
 - [ ] Join as `alice` and finish a game. The `leaderboard` Workflow appears. Its history starts with `WorkflowExecutionStarted` followed by `WorkflowExecutionSignaled`, from one call. Alice is on the board.
 - [ ] Join as `bob` and finish a game. Both are listed, ranked by points earned. The leaderboard has one more Signal and is still the same Workflow.
+
+  ![The leaderboard](img/leaderboard.png)
+
+  ![Signal-With-Start: started and signaled by one call](img/leaderboard-history.png)

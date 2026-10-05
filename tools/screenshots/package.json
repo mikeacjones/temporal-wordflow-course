@@ -1,0 +1,10 @@
+{
+  "name": "wordflow-screenshots",
+  "description": "Maintainer tool: captures course screenshots",
+  "scripts": {},
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

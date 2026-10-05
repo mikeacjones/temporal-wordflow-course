@@ -33,7 +33,13 @@ Follow [`build.md`](build.md).
 
 - [ ] Submit `submissions/bread.json`. The `submission` Query returns `awaiting_review`.
 - [ ] In the history, eight `ActivityTaskScheduled` events come before any `ActivityTaskCompleted`, then a `TimerStarted` labelled **review deadline**.
+
+  ![Eight lookups scheduled in parallel](img/parallel-lookups.png)
+
 - [ ] Send the `review` Signal with `{"approved": true, "reviewer": "you"}`. The Timer is cancelled, the puzzle is saved, the feed shows **New puzzle: Bread, approved by you**, and **Bread** appears in the puzzle list.
+
+  ![The review Signal cancels the Timer](img/approved.png)
+
 - [ ] Copy the file, change its `id` to `bread-2`, and add the word `DRAEB`. Submit it. The Query shows `DRAEB` under `unknownWords`. Reject it, and the Workflow completes with status `rejected`.
 
 Delete `puzzles/bread.json` afterwards if you want the original puzzle list back.

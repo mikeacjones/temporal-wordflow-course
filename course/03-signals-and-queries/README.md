@@ -32,8 +32,14 @@ Before you start, run `make clean-workflows` to end games from earlier lessons.
 - [ ] Click a puzzle. The board appears, sometimes after a brief **loading** state.
 - [ ] Guess a word in the puzzle. Its slot fills in.
 - [ ] Guess a word made from the letters that isn't in the puzzle. It appears under **Not in puzzle**.
+
+  ![Found words and a word that's not in the puzzle](img/signals-board.png)
+
 - [ ] Guess `zz`. The app says **Sent ZZ**, then nothing changes. The game ignored it, and nobody told you. That's the downside of Signals.
 - [ ] In the Temporal UI, every guess is a `WorkflowExecutionSignaled` event. The board refreshes don't appear anywhere: Queries aren't recorded.
+
+  ![Each guess is a WorkflowExecutionSignaled event](img/signals-history.png)
+
 - [ ] Stop the Worker and send two guesses. They're still accepted, but the board stops refreshing because nothing can answer the Query. Start the Worker. Both guesses are applied.
 - [ ] Find every word. The status changes to **won**, and the Workflow completes with the result (`won`, `score`).
 

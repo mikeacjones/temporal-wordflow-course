@@ -32,4 +32,7 @@ Follow [`build.md`](build.md).
 - [ ] Start a new game and guess a few bonus words. They're still marked as bonuses.
 - [ ] The server log shows both regions for each word: one answers, and the other logs **caller gave up** a moment later.
 - [ ] The game's history shows two `ActivityTaskScheduled` events labelled **lookup in east** and **lookup in west**, one completed, and `ActivityTaskCancelRequested` for the other.
+
+  ![Two regional lookups: one wins, the other is cancelled](img/race.png)
+
 - [ ] A game that started before the change still makes one lookup per word.

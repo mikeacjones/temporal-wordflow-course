@@ -1,3 +1,4 @@
 .temporal/
 histories/
 .DS_Store
+node_modules/

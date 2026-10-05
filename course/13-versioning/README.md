@@ -28,4 +28,9 @@ Start with your Lesson 12 code, without the `announce` call, running.
 - [ ] Add the versioned `announce` call. `make replay` prints `ok` for every history, old games included.
 - [ ] Restart the Worker. The old game keeps working: guesses, hints, and the clock.
 - [ ] Join as `bob` and start a game. The feed shows **bob started ...**. His game's history has a `MarkerRecorded` event, then the `Announce` Activity.
+
+  ![The feed announces Bob's game](img/feed.png)
+
+  ![The version marker, then the Announce Activity](img/marker.png)
+
 - [ ] Save Bob's game with `make history`, then run `make replay S=12`. Bob's game fails on the Lesson 12 code. That's why you can't simply roll back.

@@ -30,9 +30,14 @@ Follow [`build.md`](build.md).
 ## Check it
 
 - [ ] The Temporal UI opens on port 8233 and shows the `default` namespace with no Workflows.
+
+  ![Temporal UI with no Workflows](img/temporal-ui-empty.png)
+
 - [ ] The web app opens on port 8080 and lists five puzzles.
 - [ ] Clicking a puzzle shows **Not built yet. This arrives in Lesson 1.**
 - [ ] The **External services** panel shows the dictionary mode and an empty feed.
+
+  ![The starter web app](img/app-starter.png)
 
 ## Working through the course
 

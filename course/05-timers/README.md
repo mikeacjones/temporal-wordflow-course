@@ -33,6 +33,15 @@ Run `make clean-workflows`, then restart the Worker and the server.
 
 - [ ] The game shows a countdown. The history has a `TimerStarted` event labelled **game deadline**.
 - [ ] Click **+30s**. The countdown jumps forward 30 seconds. The history shows `TimerCanceled`, then a new `TimerStarted`.
+
+  ![The extended countdown](img/extended.png)
+
+  ![TimerCanceled, then a new TimerStarted](img/timer-history.png)
+
+  The **Timeline** tab shows the same thing: the first **game deadline** Timer is cancelled by the `extendTime` Update, and a new one starts.
+
+  ![The Timers on the Timeline tab](img/timer-timeline.png)
+
 - [ ] Click **+30s** a third time. You get **no time extensions left**, and nothing is added to the history.
 - [ ] Let the clock run out. The status becomes **timed_out**, `TimerFired` appears, and the Workflow completes.
 - [ ] Start a game, then stop the Worker. Wait until the deadline has passed, then start the Worker. The game is timed out right away, and `TimerFired` shows the deadline time, not the time the Worker came back.

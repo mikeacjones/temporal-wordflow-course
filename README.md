@@ -63,7 +63,7 @@ Optional exercises, after Lesson 13:
 
 ## Adding a language
 
-A language branch is created from `main`. It adds files and never edits the shared ones (`README.md`, `course/*/README.md`, `api/`, `web/`, `puzzles/`, `submissions/`). It provides:
+A language branch is created from `main`. It adds files and never edits the shared ones (`README.md`, `course/*/README.md`, `api/`, `web/`, `puzzles/`, `submissions/`, `tools/`). It provides:
 
 - `.devcontainer/` with the language toolchain and the Temporal CLI.
 - A `Makefile` with the targets `temporal`, `worker`, `server`, `replay`, `history ID=…`, and `clean-workflows`. `worker` and `server` accept `S=NN` to run a solution.
@@ -72,3 +72,15 @@ A language branch is created from `main`. It adds files and never edits the shar
 - `course/*/build.md` for every lesson.
 
 Use the Temporal names from the contract exactly, so every lesson's README stays true.
+
+### Screenshots
+
+The images in `course/*/img/` come from `tools/screenshots`, which runs each lesson's solution with `make worker S=NN` and `make server S=NN` and drives the web app and the Temporal UI with Playwright. To regenerate them from a language branch:
+
+```sh
+cd tools/screenshots
+npm install && npx playwright install chromium
+node capture.mjs          # every lesson, or name some: node capture.mjs 04 saga
+```
+
+The tool waits for the Worker to print `Started Worker`. If your SDK prints something else, set `WORKER_READY` to a regular expression that matches it.

@@ -33,7 +33,13 @@ Follow [`build.md`](build.md).
 ## Check it
 
 - [ ] Join as `alice`. The player panel shows 20 points. In the Temporal UI, `player-alice` is **Running**.
+
+  ![The player panel](img/player.png)
+
 - [ ] Click **Switch player** and join as `alice` again. The history has a second `join` Update, and there's still one Workflow. Both Updates return the same `joinedAt`.
+
+  ![Two join Updates on one player Workflow](img/player-history.png)
+
 - [ ] Reload the page. You're still `alice`: the app queries the player.
 - [ ] `curl -i localhost:8080/api/players/nobody` returns `404`.
 - [ ] Play a game. Alice's points don't change yet.
