@@ -2,3 +2,4 @@
 histories/
 .DS_Store
 node_modules/
+.setup-status.json

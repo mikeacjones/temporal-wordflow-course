@@ -67,7 +67,7 @@ Optional exercises, after Lesson 13:
 
 A language branch is created from `main`. It adds files and never edits the shared ones (`README.md`, `course/*/README.md`, `api/`, `web/`, `puzzles/`, `submissions/`, `site/`, `tools/`). It provides:
 
-- `.devcontainer/` with the language toolchain and the Temporal CLI. It runs `make course` in the background on every start, and forwards port 8000 as **Course** and opens it.
+- `.devcontainer/` with the language toolchain and the Temporal CLI. It runs `make course` in the background on every start, and opens port 8000 as **Course** in the editor. Setup starts the site first, then writes its progress to `.setup-status.json` (`{"step": "Installing the Temporal CLI", "done": false, "failed": false}`) so the site can show a "Setting up" banner until it's done.
 - A `Makefile` with the targets `temporal`, `worker`, `server`, `replay`, `history ID=…`, `clean-workflows`, and `course`. `worker` and `server` accept `S=NN` to run a solution.
 - `make course` serves the repository's files over HTTP on port 8000, with `/` serving `site/index.html`. The site in `site/` does the rest: it shows each lesson's `build.md` inside the lesson, under **Build it**.
 - The game rules, puzzle store, HTTP server, and fake services described in [the contract](api/contract.md).

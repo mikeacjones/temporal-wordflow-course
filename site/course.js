@@ -87,9 +87,48 @@
     else markSidebar();
   }
 
+  // While the Codespace is being set up, setup writes {"step", "done", "failed"}
+  // to /.setup-status.json. No file means there's nothing to wait for.
+  function watchSetup() {
+    const banner = document.createElement("div");
+    banner.className = "setup-banner";
+    let seenRunning = false;
+    const fit = () => document.body.style.setProperty("--banner", (banner.isConnected ? banner.offsetHeight : 0) + "px");
+    const remove = () => {
+      banner.remove();
+      fit();
+    };
+    window.addEventListener("resize", fit);
+
+    const poll = () =>
+      fetch("/.setup-status.json", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .catch(() => null)
+        .then((s) => {
+          if (!s || (s.done && !seenRunning)) return remove();
+          if (!banner.isConnected) document.body.prepend(banner);
+          if (s.failed) {
+            banner.className = "setup-banner failed";
+            banner.textContent = `Setup failed while ${s.step.toLowerCase()}. Press Cmd/Ctrl+Shift+P and run "Codespaces: View Creation Log" for details.`;
+          } else if (s.done) {
+            banner.className = "setup-banner ready";
+            banner.textContent = "Your Codespace is ready. Open a terminal and start Lesson 0.";
+            setTimeout(remove, 15000);
+          } else {
+            seenRunning = true;
+            banner.className = "setup-banner";
+            banner.textContent = `Setting up your Codespace: ${s.step}… You can read along, but wait for this to finish before running commands.`;
+            setTimeout(poll, 2000);
+          }
+          fit();
+        });
+    poll();
+  }
+
   window.$docsify.plugins.push(function (hook, vm) {
     hook.mounted(function () {
       document.querySelector(".sidebar .app-name")?.after(document.querySelector(".app-links"));
+      watchSetup();
     });
 
     hook.beforeEach(function (content, next) {
