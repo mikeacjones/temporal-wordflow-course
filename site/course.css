@@ -1,0 +1,61 @@
+.app-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: -8px 0 20px;
+}
+
+.sidebar .app-links a {
+  display: block;
+  margin: 0;
+  white-space: nowrap;
+  line-height: 1.4;
+  padding: 6px 12px;
+  border: 1px solid var(--theme-color);
+  border-radius: 6px;
+  background: var(--theme-color);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sidebar .app-links a:hover {
+  opacity: 0.85;
+}
+
+.markdown-section {
+  max-width: 900px;
+}
+
+.markdown-section img {
+  display: block;
+  margin: 12px 0 20px;
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: 6px;
+}
+
+.markdown-section li.task-list-item {
+  list-style: none;
+  margin-left: -1.2em;
+}
+
+.markdown-section li.task-list-item input[type="checkbox"] {
+  width: 1.05em;
+  height: 1.05em;
+  margin-right: 0.4em;
+  vertical-align: -0.12em;
+  cursor: pointer;
+  accent-color: var(--theme-color);
+}
+
+.markdown-section li.task-list-item.checked > p:first-child,
+.markdown-section li.task-list-item.checked > label {
+  opacity: 0.6;
+}
+
+.sidebar-nav a.done::after {
+  content: " ✓";
+  color: var(--theme-color);
+  font-weight: 700;
+}

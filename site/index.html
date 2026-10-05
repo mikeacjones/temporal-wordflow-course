@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wordflow: learn Temporal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/vue.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/dark.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="/site/course.css">
+</head>
+<body>
+  <div class="app-links">
+    <a data-port="8080" target="_blank" rel="noopener">Web app ↗</a>
+    <a data-port="8233" target="_blank" rel="noopener">Temporal UI ↗</a>
+  </div>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: "Wordflow",
+      themeColor: "#6b63ff",
+      nameLink: "#/",
+      basePath: "/",
+      homepage: "site/home.md",
+      loadSidebar: "site/_sidebar.md",
+      alias: { "/.*/_sidebar.md": "/site/_sidebar.md" },
+      relativePath: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      search: { paths: "auto", depth: 3, placeholder: "Search the course" },
+      pagination: { crossChapter: true, crossChapterText: false },
+      copyCode: { buttonText: "Copy", successText: "Copied" },
+      plugins: [],
+    };
+  </script>
+  <script src="/site/course.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2.10.1/dist/docsify-pagination.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@3.0.0/dist/docsify-copy-code.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-go.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+</body>
+</html>

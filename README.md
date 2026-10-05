@@ -16,7 +16,9 @@ Each lesson adds one feature to the game and teaches the concept behind it. By t
    | Python | `python` (coming soon) |
 
 2. Switch to that branch on GitHub, then choose **Code → Codespaces → Create codespace on `<branch>`**. Setup takes a few minutes.
-3. Open [`course/00-setup`](course/00-setup/README.md).
+3. The course opens in a browser tab once the Codespace is ready. If it doesn't, open the **Ports** tab and open **Course** (port 8000). Each lesson page shows the concepts, the build steps for your language, and a checklist that remembers your progress.
+
+You can also read the lessons here on GitHub, starting with [`course/00-setup`](course/00-setup/README.md).
 
 The `main` branch only has the shared material (lesson text, web app, puzzles), so it won't run on its own.
 
@@ -63,10 +65,11 @@ Optional exercises, after Lesson 13:
 
 ## Adding a language
 
-A language branch is created from `main`. It adds files and never edits the shared ones (`README.md`, `course/*/README.md`, `api/`, `web/`, `puzzles/`, `submissions/`, `tools/`). It provides:
+A language branch is created from `main`. It adds files and never edits the shared ones (`README.md`, `course/*/README.md`, `api/`, `web/`, `puzzles/`, `submissions/`, `site/`, `tools/`). It provides:
 
-- `.devcontainer/` with the language toolchain and the Temporal CLI.
-- A `Makefile` with the targets `temporal`, `worker`, `server`, `replay`, `history ID=…`, and `clean-workflows`. `worker` and `server` accept `S=NN` to run a solution.
+- `.devcontainer/` with the language toolchain and the Temporal CLI. It runs `make course` in the background on every start, and forwards port 8000 as **Course** and opens it.
+- A `Makefile` with the targets `temporal`, `worker`, `server`, `replay`, `history ID=…`, `clean-workflows`, and `course`. `worker` and `server` accept `S=NN` to run a solution.
+- `make course` serves the repository's files over HTTP on port 8000, with `/` serving `site/index.html`. The site in `site/` does the rest: it shows each lesson's `build.md` inside the lesson, under **Build it**.
 - The game rules, puzzle store, HTTP server, and fake services described in [the contract](api/contract.md).
 - `app/` set to the Lesson 0 starter, and `solutions/00` through `solutions/13` plus `solutions/extras`.
 - `course/*/build.md` for every lesson.

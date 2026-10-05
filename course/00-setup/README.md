@@ -46,3 +46,4 @@ Follow [`build.md`](build.md).
 - Games from earlier lessons keep running with the code they started on. If the Worker logs errors about old Workflows, end them with `make clean-workflows`. Lesson 12 explains why this happens.
 - To compare with the finished code, run `make worker S=NN` and `make server S=NN`.
 - `make reset-temporal` (with `make temporal` stopped) deletes every Workflow and starts fresh.
+- The course site starts with the Codespace. If it isn't on port 8000, run `make course`.
